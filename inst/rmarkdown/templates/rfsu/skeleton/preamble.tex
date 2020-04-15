@@ -1,0 +1,25 @@
+\fontsize{11}{14}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\usepackage{eso-pic}
+
+\AddToShipoutPicture*
+    {\put(440,753){\includegraphics[width=3.5cm,height=2.5cm]{logo.jpg}}}
+
+
+\usepackage{titlesec}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{Calibri}
+
+% Define a new fontfamily for the subsubsection font
+% Don't use \fontspec directly to change the font
+%\newfontfamily\subsubsectionfont[Color=MSLightBlue]{Cambria}
+% Set formats for each heading level
+%\titleformat*{\section}{\Large\bfseries\sffamily}
+%\titleformat*{\subsection}{\large\bfseries\sffamily}
+
+
+\usepackage{floatrow}
+\floatsetup[figure]{capposition=top}
+\floatsetup[table]{capposition=top}
