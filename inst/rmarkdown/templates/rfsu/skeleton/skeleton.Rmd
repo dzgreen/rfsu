@@ -3,6 +3,7 @@ output:
   pdf_document:
     includes:
       in_header: "preamble.tex"
+    fig_caption: true
     latex_engine: xelatex
 geometry: "left=2cm,right=2cm,top=2cm,bottom=2cm"
 classoption: a4paper
@@ -13,7 +14,11 @@ linestretch: 1.15
 Rådet for Socialt Udsatte \newline Sekretariatet \newline April 2020 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, fig.width=8, fig.height=5)
+library(knitr)
+library(ggplot2)
+library(kableExtra)
+
+opts_chunk$set(echo = TRUE, fig.width=8, fig.height=5)
 ```
 
 # Titel
@@ -25,18 +30,39 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Nunc eget condimentum neque. Ut porttitor, risus non volutpat vehicula, tortor dui tempus lacus, nec semper orci dui non urna. Cras quam ligula, porta in consequat semper, feugiat et ex. Nulla facilisi. Sed posuere vitae nibh eget consectetur. Ut eu justo ultricies, pretium libero et, luctus nisi. Integer pulvinar in turpis vitae elementum. Donec posuere purus vel ultricies malesuada. Donec sodales est vel auctor venenatis. Nulla pharetra tincidunt efficitur. Aliquam ac tellus pretium, facilisis leo at, semper arcu. Aenean blandit eros sed tellus congue, sed porttitor tortor iaculis. Duis lacinia sapien eu nibh blandit, et posuere est iaculis. 
 
-```{r figur 1, echo=FALSE, fig.cap= "dit og dat (2018-pl)"}
-library(knitr)
-knitr::include_graphics(path = "../output/figurer/figur_01.png")
+```{r figur 1, echo=FALSE, message=FALSE, warning=FALSE, results='asis', fig.cap="This is a long caption. This is a long caption. This is a long caption. This is a long caption. This is a long caption. This is a long caption. This is a long caption. "}
+p <- ggplot(data = data.frame(value=rnorm(1000)), aes(x=value)) + 
+  geom_histogram() +
+  labs(title = "test title")
+
+p
 ```
 
 \newpage
 
 Nunc eget condimentum neque. Ut porttitor, risus non volutpat vehicula, tortor dui tempus lacus, nec semper orci dui non urna. Cras quam ligula, porta in consequat semper, feugiat et ex. Nulla facilisi. Sed posuere vitae nibh eget consectetur. Ut eu justo ultricies, pretium libero et, luctus nisi. Integer pulvinar in turpis vitae elementum. Donec posuere purus vel ultricies malesuada. Donec sodales est vel auctor venenatis. Nulla pharetra tincidunt efficitur. Aliquam ac tellus pretium, facilisis leo at, semper arcu. Aenean blandit eros sed tellus congue, sed porttitor tortor iaculis. Duis lacinia sapien eu nibh blandit, et posuere est iaculis. 
 
-```{r tabel, echo=FALSE, message=FALSE, warning=FALSE}
-kable(x = as_tibble(mtcars)[1:7,1:3], caption = "Kommunale udgifter til socialt udsatte i mio. kr. (2018 priser)", booktabs = TRUE)
+```{r tabel, echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
+# knitr::kable(x = mtcars[1:7,1:3], caption = "Kommunale udgifter til socialt udsatte i mio. kr. (2018 priser)", booktabs = TRUE)
+
+df <- data.frame(
+    id = c(1L, 2L, 4L),
+    age = c(59L, 54L, 73L),
+    sex = c('m', 'm', 'f'),
+    zone = rep(2L, 3))
+
+kable(x = df, caption = "This is a long caption. This is a long caption. This is a long caption. This is a long caption. This is a long caption. This is a long caption. This is a long caption. This is a long caption.", booktabs = TRUE, label = "hejsa du der") %>% 
+  kable_styling(position = "center")
+
+
+
+library(xtable)
+# Preset some options for printing your xtables
+options(xtable.caption.placement = 'bottom', # notice \floatsetup overrides
+        xtable.include.rownames = FALSE,
+        xtable.comment = FALSE,
+        xtable.booktabs = TRUE)
+
+xtable(df, caption = 'This is a long caption. This is a long caption. This is a long caption. This is a long caption. This is a long caption. This is a long caption. This is a long caption. This is a long caption.')
+
 ```
-
-
-
