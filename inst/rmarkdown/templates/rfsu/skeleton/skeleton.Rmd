@@ -16,28 +16,25 @@ Rådet for Socialt Udsatte \newline Sekretariatet \newline April 2020
 knitr::opts_chunk$set(echo = TRUE, fig.width=8, fig.height=5)
 ```
 
-# Offentlige driftsudgifter til kommunale sociale indsatser målrettet socialt udsatte
+# Titel
 
-De kommunale sociale indsatser i form af botilbud, misbrugsbehandling, bostøtte, herberger- og forsorgshjem m.v. er centrale for mange socialt udsatte. Derfor er det også vigtigt at følge udviklingen i udgifter til området. Det fremgår ofte af debatten, at kommunerne oplever et stort udgiftspres på området, men er det nu også tilfældet? I dette notat er regnskabstallene for de konti, der vedrører kommunale sociale indsatser til socialt udsatte, trukket ud af Danmarks Statistik, samlet og gjort sammenlignelige over årene så vidt det er muligt.\footnote{fodnote}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\footnote{fodnote}
 
 - nummer 1
 - nummmer 2
 
-I forhold til sammenligningen tilbage i tiden skal der tages højde for, at der i 2018 blev lavet adskillige ændringer i kommunernes kontoplan. Ændringerne havde det formål at skille ældreudgifter og voksenudgifter ad i regnskaberne. Ændringerne gør det også muligt at adskille handicapudgifter fra udgifter målrettet socialt udsatte på mange områder. I forbindelse med den nye kontoplan er der kommet to nye funktioner der udspecificerer personlig støtte efter §§ 85 og 83, samt botilbudslignende tilbud. Derudover er der som følge af lov nr. 691 af 8. juni 2017 om ændring af lov om anvendelse af tvang i psykiatrien og sundhedsloven, blevet oprettet funktionen særlige pladser på psykiatrisk afdeling. Fremover bliver det muligt at lave en mere fyldestgørende opgørelse af udgifter til socialt udsatte. Der går imidlertid nogle år, før der kan laves tidsserier med de nye mere komplette opgørelser. Sammenligninger over udgiftsudviklingen må derfor nogle år endnu tage udgangspunkt i den gamle opgørelse. Uden de tre nye funktioner er de samlede udgifter i 2018 målrettet socialt udsatte 7,1 mia. kr. Med de tre nye funktioner er udgifterne 9,5 mia. kr.
+Nunc eget condimentum neque. Ut porttitor, risus non volutpat vehicula, tortor dui tempus lacus, nec semper orci dui non urna. Cras quam ligula, porta in consequat semper, feugiat et ex. Nulla facilisi. Sed posuere vitae nibh eget consectetur. Ut eu justo ultricies, pretium libero et, luctus nisi. Integer pulvinar in turpis vitae elementum. Donec posuere purus vel ultricies malesuada. Donec sodales est vel auctor venenatis. Nulla pharetra tincidunt efficitur. Aliquam ac tellus pretium, facilisis leo at, semper arcu. Aenean blandit eros sed tellus congue, sed porttitor tortor iaculis. Duis lacinia sapien eu nibh blandit, et posuere est iaculis. 
 
 ```{r figur 1, echo=FALSE, fig.cap= "dit og dat (2018-pl)"}
+library(knitr)
 knitr::include_graphics(path = "../output/figurer/figur_01.png")
 ```
 
 \newpage
 
-Udgifterne efter serviceloven udgør en mindre del af de samlede bevillinger til socialt udsatte. Mange socialt udsatte modtager foruden serviceydelser også kontanthjælp, førtidspension eller andre indkomstoverførsler, og mange modtager indsatser i sundhedsvæsenet, beskæftigelsessystemet mv.\footnote{En anden fodnote} En analyse fra VIVE viser, at indsatser og tilbud til socialt udsatte efter serviceloven udgør omkring 16 pct. af alle offentlige udgifter, som anvendes på socialt udsatte.
+Nunc eget condimentum neque. Ut porttitor, risus non volutpat vehicula, tortor dui tempus lacus, nec semper orci dui non urna. Cras quam ligula, porta in consequat semper, feugiat et ex. Nulla facilisi. Sed posuere vitae nibh eget consectetur. Ut eu justo ultricies, pretium libero et, luctus nisi. Integer pulvinar in turpis vitae elementum. Donec posuere purus vel ultricies malesuada. Donec sodales est vel auctor venenatis. Nulla pharetra tincidunt efficitur. Aliquam ac tellus pretium, facilisis leo at, semper arcu. Aenean blandit eros sed tellus congue, sed porttitor tortor iaculis. Duis lacinia sapien eu nibh blandit, et posuere est iaculis. 
 
 ```{r tabel, echo=FALSE, message=FALSE, warning=FALSE}
-library(knitr)
-library(kableExtra)
-library(tidyverse)
-
 kable(x = as_tibble(mtcars)[1:7,1:3], caption = "Kommunale udgifter til socialt udsatte i mio. kr. (2018 priser)", booktabs = TRUE)
 ```
 
